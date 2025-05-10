@@ -96,4 +96,35 @@ app.post(
     res.status(201).json({ groupMessage });
   })
 );
+app.delete(
+  "/group/:groupId",
+  authentication,
+  asyncHandler(async (req, res) => {
+    const groupId = req.params.groupId;
+    const group = await Group.findByIdAndDelete(groupId);
+    if (!group) {
+      res.status(404);
+      throw new Error("Group not found");
+    }
+    res.status(200).json({ message: "Group deleted successfully" });
+  })
+);
+app.put(
+  "/group/:groupId",
+  authentication,
+  asyncHandler(async (req, res) => {
+    const groupId = req.params.groupId;
+    const { name, description, password } = req.body;
+    const group = await Group.findByIdAndUpdate(
+      groupId,
+      { name, description, password },
+      { new: true }
+    );
+    if (!group) {
+      res.status(404);
+      throw new Error("Group not found");
+    }
+    res.status(200).json({ group });
+  })
+);  
 server.listen(port, () => console.log("server is running at port " + port));
