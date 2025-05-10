@@ -1,0 +1,53 @@
+POST http://localhost:5000/user/register
+Content-Type: application/json
+
+{
+    "name":"saikrishna",
+    "email":"saikrishna@gmail.com",
+    "password":"saikrishna"
+}
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+    "email":"teja@gmail.com",
+    "password":"teja123"
+}
+
+###
+DELETE http://localhost:5000/user/delete/6805d20c17da3ea529ca22d8
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+###
+GET http://localhost:5000/user/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+###
+POST http://localhost:5000/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+Content-Type: application/json
+
+{
+    "text": "Hi bro",
+    "receiverId": "681af64f1eae7d0dc6937970",
+    "senderId": "6805c7f81e8a73825c44c34b"
+}
+###
+GET http://localhost:5000/messages
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+###
+GET http://localhost:5000/messages/6805c7f81e8a73825c44c34b/6805c7f81e8a73825c44c34b
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+###
+DELETE http://localhost:5000/messages/681d84d14c4cbe479ac047a9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+
+###
+PUT http://localhost:5000/messages/681d7fe4d79f724ec4142974
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlamFAZ21haWwuY29tIiwiaWQiOiI2ODA1YzdmODFlOGE3MzgyNWM0NGMzNGIiLCJpYXQiOjE3NDY3ODAwMzd9.J8H7rrikE1Z1HrOvSoQ5XR6JiyDYNqvn2tuat-H2-kc
+Content-Type: application/json
+
+{
+    "text": "Hey hola",
+    "receiverId": "6805c7f81e8a73825c44c34b",
+    "senderId": "6805c7f81e8a73825c44c34b"
+}   
