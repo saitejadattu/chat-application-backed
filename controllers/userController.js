@@ -16,8 +16,12 @@ const userQueries = {
       const hashedPass = await bcrypt.hash(password, 10);
       const registerUser = await User({ ...req.body, password: hashedPass });
       const response = await registerUser.save();
-      if (response) sendResponse(res, 200, "registration successful");
+      res.status(201).json({
+        message: "User created successfully",
+        user: response,
+      });
     } else {
+      res.status(401);
       throw new Error("Email already in use");
     }
   }),
