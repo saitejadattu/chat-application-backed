@@ -2,9 +2,10 @@ POST http://localhost:5000/user/register
 Content-Type: application/json
 
 {
-    "name":"saikrishna",
-    "email":"saikrishna@gmail.com",
-    "password":"saikrishna"
+    "name":"rajesh",
+    "email":"rajesh@gmail.com",
+    "password":"rajesh",
+    "origin":"india"
 }
 ###
 POST http://localhost:5000/user/login
